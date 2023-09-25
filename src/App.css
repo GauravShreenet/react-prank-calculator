@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+:root {
+  --primaryClr: rgb(45, 226, 250);
+  --secondaryClr: rgb(161, 242, 253);
+  --trClr: #c5ffca; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper{
+  background: linear-gradient(var(--trClr), var(--primaryClr));
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+
+.frame {
+  width: 60vh;
+  background: rgba(128, 128, 128, 0.705);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "display display display display"
+                       "ac c per divide"
+                       "b7 b8 b9 x"
+                       "b4 b5 b6 minus"
+                       "b1 b2 b3 add"
+                       "b0 dot ans ans";
+}
+
+.frame .btn {
+  background: var(--trClr);
+  height: 50px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.frame .btn:hover {
+  background: var(--secondaryClr);
+  cursor: pointer;
+}
+
+.result{
+  grid-area: display;
+  background: var(--secondaryClr);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.btn-ac {
+  grid-area: ac;
+}
+
+.btn-c {
+  grid-area: c;
+}
+
+.btn-per {
+  grid-area: per;
+}
+
+.btn-divide {
+  grid-area: divide;
+}
+
+.btn-7  {
+  grid-area: b7;
+}
+
+.btn-8 {
+  grid-area: b8;
+}
+
+.btn-9 {
+  grid-area: b9;
+}
+
+.btn-x {
+  grid-area: x;
+}
+
+.btn-4 {
+  grid-area: b4;
+}
+
+.btn-5 {
+  grid-area: b5;
+}
+
+.btn-6 {
+  grid-area: b6;
+}
+
+.btn-minus {
+  grid-area: minus;
+}
+
+.btn-1 {
+  grid-area: b1;
+}
+
+.btn-2 {
+  grid-area: b2;
+}
+
+.btn-3 {
+  grid-area: b3;
+}
+
+.btn-add {
+  grid-area: add;
+}
+
+.btn-0 {
+  grid-area: b0;
+}
+
+.btn-dot {
+  grid-area: dot;
+}
+
+.btn-ans {
+  grid-area: ans;
+}
+
+.prank{
+  animation: shake 0.5s ease-in;
+  background: red;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@keyframes shake {
+  0%{
+      transform: translateX(10px);
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  50%{
+      transform: translateX(-10px);
   }
-  to {
-    transform: rotate(360deg);
+  80%{
+      transform: translateX(10px);
   }
+  100%{
+      transform: translateX(-10px);
+  }
+  
 }
